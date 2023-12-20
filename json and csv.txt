@@ -1,0 +1,26 @@
+import  json
+import  csv
+
+
+json_file = open('C:\Users\J0223063\Desktop\quiz')
+data = json.load(json_file)
+json_file.close();
+employe_data= data['emp_datales']
+
+
+csv_file = open('C:\Users\J0223063\Desktop\quiz', 'v')
+
+
+csv_writerow = csv.writer(csv_file)
+
+count = 0
+for emp in employe_data:
+    if count== 0:
+        header = emp.keys()
+        csv_writer.writerow(header)
+        count += 1
+
+    csv_writerow.writerow(emp.values())
+
+csv_file.close()
+print("don")
